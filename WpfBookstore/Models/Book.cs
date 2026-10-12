@@ -6,63 +6,63 @@ namespace WpfBookstore.Models
 {
     public class Book : INotifyPropertyChanging, INotifyPropertyChanged
     {
-        private int _id;
+        private int _id = 0;
         public int Id
         {
             get => _id;
             set => SetWithNotify(ref _id, value);
         }
 
-        private string _title;
+        private string _title = "";
         public string Title
         {
             get => _title;
             set => SetWithNotify(ref _title, value);
         }
 
-        private string _author;
+        private string _author = "";
         public string Author
         {
             get => _author;
             set => SetWithNotify(ref _author, value);
         }
 
-        private short _year;
+        private short _year = 0;
         public short Year
         {
             get => _year;
             set => SetWithNotify(ref _year, value);
         }
 
-        private string _genre;
+        private string _genre = "";
         public string Genre
         {
             get => _genre;
             set => SetWithNotify(ref _genre, value);
         }
 
-        private string _isbn;
+        private string _isbn = "";
         public string ISBN
         {
             get => _isbn;
             set => SetWithNotify(ref _isbn, value);
         }
 
-        private string _publisher;
+        private string _publisher = "";
         public string Publisher
         {
             get => _publisher;
             set => SetWithNotify(ref _publisher, value);
         }
 
-        private int _pages;
+        private int _pages = 0;
         public int Pages
         {
             get => _pages;
             set => SetWithNotify(ref _pages, value);
         }
 
-        private decimal _price;
+        private decimal _price = 0m;
         [Precision(10, 2)]
         public decimal Price
         {
@@ -70,29 +70,11 @@ namespace WpfBookstore.Models
             set => SetWithNotify(ref _price, value);
         }
 
-        private int _quantityInStock;
+        private int _quantityInStock = 0;
         public int QuantityInStock
         {
             get => _quantityInStock;
             set => SetWithNotify(ref _quantityInStock, value);
-        }
-
-        public Book(int id, string title, string author, short year, string genre, string iSBN, string publisher, int pages, decimal price, int quantityInStock)
-        {
-            _id = id;
-            _title = title;
-            _author = author;
-            _year = year;
-            _genre = genre;
-            _isbn = iSBN;
-            _publisher = publisher;
-            _pages = pages;
-            _price = price;
-            _quantityInStock = quantityInStock;
-        }
-
-        public Book() : this(0, "", "", 0, "", "", "", 0, 0m, 0)
-        {
         }
 
         public event PropertyChangingEventHandler? PropertyChanging;
